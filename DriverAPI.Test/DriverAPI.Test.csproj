@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VehicleDriverAccountBook\AuthorizationAPI.csproj" />
+    <ProjectReference Include="..\DriverAPI\DriverAPI.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using VehicleAPI.Interfaces;
 using VehicleAPI.Models;
 
@@ -15,6 +16,10 @@ namespace VehicleAPI.Controllers
         public VehicleController(IVehicleService service)
         {
             _service = service;
+        }
+
+        public VehicleController()
+        {
         }
 
         [HttpGet]
@@ -66,6 +71,11 @@ namespace VehicleAPI.Controllers
             ResponseStatus response = new ResponseStatus();
             response.IsSuccess = _service.DeleteVehicle(registrationNo);
             return Ok(response);
+        }
+
+        public object Get(object response)
+        {
+            throw new NotImplementedException();
         }
     }
 }

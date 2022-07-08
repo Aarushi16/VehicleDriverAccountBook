@@ -1,8 +1,7 @@
 using System;
 using Xunit;
 
-
-namespace VehicleDriverAccountBook.Test
+namespace BookingAPI.Test
 {
     public class UnitTest1
     {
