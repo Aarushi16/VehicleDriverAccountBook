@@ -70,7 +70,14 @@ namespace VehicleDriverAccountBook
                 Password = "test@123"
             };
 
+            User user2 = new User()
+            {
+                Username = "jaya",
+                Password = "demo@123"
+            };
+
             context.Users.Add(user1);
+            context.Users.Add(user2);
             context.SaveChanges();
         }
     }
