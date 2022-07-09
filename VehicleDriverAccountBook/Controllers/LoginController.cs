@@ -22,8 +22,10 @@ namespace AuthorizationAPI.Controllers
         [HttpPost]
         public IActionResult SignIn(User user)
         {
-            SignInResponse response = new SignInResponse();
-            response.Token = string.Empty;
+            SignInResponse response = new SignInResponse
+            {
+                Token = string.Empty
+            };
 
             var result = _userDbContext.Users.Where(x => x.Username == user.Username && x.Password == user.Password).FirstOrDefault();
             if (result != null)
