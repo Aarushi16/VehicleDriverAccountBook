@@ -1,8 +1,13 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using VehicleAPI;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace VehicleDriverAccountBook
+namespace VehicleAPI
 {
     public class Program
     {
@@ -15,7 +20,8 @@ namespace VehicleDriverAccountBook
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>()
+                    .UseUrls("https://localhost:5002/");
                 });
     }
 }
