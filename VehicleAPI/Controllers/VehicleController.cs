@@ -25,51 +25,63 @@ namespace VehicleAPI.Controllers
         [HttpGet]
         public IActionResult Vehicles()
         {
-            VehiclesResponse response = new VehiclesResponse();
-            response.IsSuccess = true;
-            response.Vehicles = _service.Vehicles();
+            VehiclesResponse response = new VehiclesResponse
+            {
+                IsSuccess = true,
+                Vehicles = _service.Vehicles()
+            };
             return Ok(response);
         }
 
         [HttpGet]
         public IActionResult VehiclesByType(int vehicleType)
         {
-            VehiclesResponse response = new VehiclesResponse();
-            response.IsSuccess = true;
-            response.Vehicles = _service.VehiclesByType(vehicleType);
+            VehiclesResponse response = new VehiclesResponse
+            {
+                IsSuccess = true,
+                Vehicles = _service.VehiclesByType(vehicleType)
+            };
             return Ok(response);
         }
 
         [HttpGet]
         public IActionResult VehicleByRegistrationNo(string registrationNo)
         {
-            VehicleByRegistrationNoResponse response = new VehicleByRegistrationNoResponse();
-            response.IsSuccess = true;
-            response.Vehicle = _service.VehicleByRegistrationNo(registrationNo);
+            VehicleByRegistrationNoResponse response = new VehicleByRegistrationNoResponse
+            {
+                IsSuccess = true,
+                Vehicle = _service.VehicleByRegistrationNo(registrationNo)
+            };
             return Ok(response);
         }
 
         [HttpPut]
         public IActionResult UpdateVehicle(Vehicle vehicle)
         {
-            ResponseStatus response = new ResponseStatus();
-            response.IsSuccess = _service.UpdateVehicle(vehicle);
+            ResponseStatus response = new ResponseStatus
+            {
+                IsSuccess = _service.UpdateVehicle(vehicle)
+            };
             return Ok(response);
         }
 
         [HttpPost]
         public IActionResult AddVehicle(Vehicle vehicle)
         {
-            ResponseStatus response = new ResponseStatus();
-            response.IsSuccess = _service.AddVehicle(vehicle);
+            ResponseStatus response = new ResponseStatus
+            {
+                IsSuccess = _service.AddVehicle(vehicle)
+            };
             return Ok(response);
         }
 
         [HttpDelete]
         public IActionResult DeleteVehicle(string registrationNo)
         {
-            ResponseStatus response = new ResponseStatus();
-            response.IsSuccess = _service.DeleteVehicle(registrationNo);
+            ResponseStatus response = new ResponseStatus
+            {
+                IsSuccess = _service.DeleteVehicle(registrationNo)
+            };
             return Ok(response);
         }
 
